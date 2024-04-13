@@ -23,7 +23,7 @@ public class Notification {
 	@Column(columnDefinition = "text")
 	private String text;
 	
-	@Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant moment;
 	
 	private Boolean read;
