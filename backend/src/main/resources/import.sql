@@ -49,5 +49,6 @@ INSERT INTO tb_task (id, description, question_count, approval_count, weight, du
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES(1, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES(2, 1, 1);
 
-
-
+INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://github.com/robcosta/desafio-empregados-auth.git', TIMESTAMP WITH TIME ZONE '2020-11-30T13:00:00Z', 0, null, null, 4, 1, 1);
+INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://github.com/robcosta/desafio-empregados-auth.git', TIMESTAMP WITH TIME ZONE '2020-12-05T13:00:00Z', 2, 'Primeiro Feedback - Favor estudar mais', null, 4, 1, 1);
+INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://github.com/robcosta/desafio-empregados-auth.git', TIMESTAMP WITH TIME ZONE '2020-12-05T19:00:00Z', 1, 'Segundo feedback - Parabéns, aprovado', 4, 4, 1, 1);
