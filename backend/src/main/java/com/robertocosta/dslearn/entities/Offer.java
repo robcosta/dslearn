@@ -38,6 +38,9 @@ public class Offer {
 	@OneToMany(mappedBy = "offer")
 	private List<Resource> resources = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "offer")
+	private List<Topic> topics = new ArrayList<>();
+	
 	public Offer() {
 	}
 
@@ -65,11 +68,11 @@ public class Offer {
 		this.edition = edition;
 	}
 
-	public Instant getSrtartMoment() {
+	public Instant getStartMoment() {
 		return startMoment;
 	}
 
-	public void setSrtartMoment(Instant startMoment) {
+	public void setStartMoment(Instant startMoment) {
 		this.startMoment = startMoment;
 	}
 
@@ -92,7 +95,7 @@ public class Offer {
 	public List<Resource> getResources() {
 		return resources;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
