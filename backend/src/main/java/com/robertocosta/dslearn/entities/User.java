@@ -20,35 +20,33 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_user")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
-	
+
 	@Column(nullable = true)
 	private String name;
-	
+
 	@Column(unique = true)
 	private String email;
-	
+
 	private String password;
-	
+
 	@ManyToMany
-	@JoinTable(name = "tb_user_role",
-		joinColumns = @JoinColumn(name = "user_id"),
-		inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "tb_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	Set<Role> roles = new HashSet<>();
-	
+
 	@OneToMany(mappedBy = "user")
 	List<Notification> notifications = new ArrayList<>();
-	
+
 	public User() {
 	}
 
 	public User(Long id, String name, String email) {
 		Id = id;
 		this.name = name;
-		this.email = email;		
+		this.email = email;
 	}
 
 	public Long getId() {
@@ -74,17 +72,21 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	public Set<Role> getRoles() {
 		return roles;
+	}
+
+	public List<Notification> getNotifications() {
+		return notifications;
 	}
 
 	@Override
